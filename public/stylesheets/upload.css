@@ -1,0 +1,25 @@
+.upload_area{
+    height: 100%;
+    width: 40%;
+    border-style: dashed;
+    border-width: 5px;
+    border-color: red;
+}
+
+
+.upload_info{
+    margin-left:15%;
+}
+
+.cate_area{
+    margin-top:10px;
+}
+.cate{
+width: 100%;
+background-color: white;
+text-align: left;
+padding:10px;
+border-style: solid;
+border-width: 0.8px;
+border-color: rgb(206, 212, 218);
+}

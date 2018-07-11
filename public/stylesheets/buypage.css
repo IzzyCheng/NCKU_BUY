@@ -1,0 +1,128 @@
+
+.sid_bar {
+    background-color: #F4F4F4;
+}
+
+.container-fluid {
+    height: 100%;
+    background-color: #F4F4F4;
+}
+
+/* sidebar*/
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    top: 0;
+    /*    Stay at the top */
+    left: 0;
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+    line-height: 3em;
+    border-right-style: solid;
+    border-right-color: #B5B5B6;
+    border-width: 0.8px;
+/*
+    border-top-style: solid;
+    border-top-color: #B5B5B6;
+    border-radius: 5px;
+*/
+}
+
+.sidenav a {
+    padding-left: 25%;
+    font-size: 1em;
+    color: #1C1C1C;
+    text-decoration:none;
+    display:block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover{
+    font-size:1.05rem;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+/*sidbar */
+
+
+/* Main */
+.main{
+    background-color: rgba(244, 244, 244, 1);
+    padding-top: 5%;
+}
+/* Main */
+
+/* item */
+.item_container{
+    display: inline-table;
+}
+
+.item{
+    display: inline-block;
+    border-right-color: #B5B5B6;
+    width: 180px;
+/*    background-color: red;*/
+    margin: 2%;
+    text-align: center;
+    border-radius: 10px;
+    border-style: solid;
+    border-color:#B5B5B6;
+    border-width: 0.8px;
+    transition: 0.3s;
+}
+
+.item img{
+    max-height: 160px;
+    max-width: 160px;
+    padding:5px;
+    width: auto;
+    overflow: hidden;
+    margin: auto;
+    display: block;
+}
+
+.item_Name, .price, .item_id{
+float: left;
+padding-left: 20px;
+padding-top: 5px;
+
+}
+.price{
+position: relative;
+
+
+font-size: 1rem;
+clear: both;
+color: #FF5236;
+font-weight: 500;
+}
+
+.item_Name{
+font-size: 0.95rem;
+color:  #1C1C1C;
+width: 150px;
+overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+}
+
+/* item */

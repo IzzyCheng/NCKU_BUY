@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    
+    
+<script>
+    
+//function submit(){
+//    console.log(mail.value);
+//}
+    
+
+    function validateEmail(email) { 
+    var addr = document.getElementById("account");
+    var at = addr.value.indexOf('@');
+    var result = document.getElementById("mailnotify");
+    var varify = addr.value.indexOf('@mail.ncku.edu.tw');
+//    console.log(addr.value);
+        
+    if (at != 9){
+        result.innerHTML = "請檢查您輸入的成大信箱格式";
+    }    
+    else{    
+    if (varify == -1){
+    result.innerHTML = "請檢查您輸入的成大信箱格式";    
+    }
+        else{
+        result.innerHTML = "";   
+        }
+    }
+}
+
+    
+    </script>   
+     
+<body>
+
+<input id="mail" type="email">
+<button onclick="validateEmail()">Submit</button>    
+<h1 id="result"></h1>
+           </body>    
+            
+</html>

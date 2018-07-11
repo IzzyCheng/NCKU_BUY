@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link href="/stylesheets/login.css" rel="stylesheet">
+  <link href="/stylesheets/style.css" rel="stylesheet">
+  <script src="/javascripts/login.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <title>NCKU Buy</title>
+</head>
+
+<body>
+
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">NCKU Buy&amp;Sell</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#"></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+    <div class="container-fluid row justify-content-center mt-5">
+        <div id="login" class="login col-4">
+
+            <div class="sign">
+           <span style="font-size: 1.2rem; font-weight: 800; margin-right: 5%;"><li>登入</li></span>
+            <a href="/register"><li>註冊</li></a>
+            </div>
+
+            <div class="loginArea">
+                <form>
+                    <div class="form-group">
+                        <label for="account">Email</label>
+                        <span style="font-size:0.7rem;"><p id="mailnotify"></p></span>
+                        <input type="text" class="form-control" id="account" placeholder="xxxx@mail.ncku.edu.tw" oninput="validateEmail()" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="" >
+                    </div>
+
+                    <a href="#">忘記信箱或密碼？</a>
+
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="remb">
+                        <label class="form-check-label" for="remb" style="margin-left:1rem">記住我</label>
+                    </div>
+                </form>
+
+                <button type="button" onclick="Check()" class="btn btn-primary btn-lg btn-block">SIGN IN</button>
+            <hr>
+                <sapn style="font-size: 0.8rem;">為保障成大學生權益，本服務係由認證學校提供個人電子信箱來認證身份，如有不便請包涵，謝謝！</sapn>
+                         </div>
+        </div>
+
+    </div>
+
+
+    <!-- bootstrap script    -->
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="/stylesheets/buypage.css" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>NCKU Buy</title>
+</head>
+
+<body>
+
+   <nav class="navbar navbar-expand-lg navbar-light bg-gray">
+  <a class="navbar-brand" href="#">NCKU Buy&amp;Sell</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/loginin">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/upload_router">Upload</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container-fluid row">
+
+<!--
+<div class="col-sm-2 sid_bar sidenav" id="sidebar">
+  <a href="#">居家 Home</a>
+  <a href="#">食物 Food</a>
+  <a href="#">衣物 Clothes</a>
+  <a href="#">電子產品 3C</a>
+  <a href="#">寵物 Pets</a>
+
+</div>   
+-->
+  
+   
+<ul class="nav flex-column navbar-expand-lg col-sm-2 sid_bar sidenav">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <li class="nav-item">
+    <a class="nav-link active" href="/loginin/home">居家 Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/loginin/food">食物 Food</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/loginin/cloth">衣物 Clothes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/loginin/3C">電子產品 3C</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/loginin/pet">寵物 Pets</a>
+  </li>
+  
+</ul>
+   <div class="col-sm-10 main" id="main">     
+<!--   search bar  -->
+    
+    <div class="item_container row" id="item_container">
+<!--    item -->
+
+<!--    end of item-->
+    </div>
+</div>
+  
+</div>   
+    <!-- bootstrap script    -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+<script>
+  var firebase;
+  var config = {
+    apiKey: "AIzaSyD6Y6EJbgU_LgzJg9IQpFot0aXueJ7WlCU",
+    databaseURL: "https://webproject-8293b.firebaseio.com/",
+    storageBucket: "webproject-8293b.appspot.com",
+    messagingSenderId: "422995971926"
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database().ref();
+  var storageRef = firebase.storage().ref();
+
+  database.once('value', function(snapshot){
+    var container = document.getElementById("item_container");
+    var files = [];
+    var names = [];
+    var prices = [];
+    for (var i in snapshot.val()) {
+      if (snapshot.val()[i].category == "clothes") {
+        files.push(snapshot.val()[i].filename);
+        names.push(snapshot.val()[i].name);
+        prices.push(snapshot.val()[i].price);
+      }
+    }
+
+    async function appendDiv(filename, name, price) {
+      var newdiv = document.createElement("div");
+      var newimg = document.createElement("img");
+      var newname = document.createElement("span");
+      var newbr = document.createElement("br");
+      var newprice = document.createElement("span");
+      newdiv.className = "item";
+      let picurl = await storageRef.child('images/'+filename).getDownloadURL().then(function(url){ return url;});
+      newimg.src = picurl;
+      newname.className = "item_name";
+      newname.innerHTML = name;
+      newprice.className = "price";
+      newprice.innerHTML = "$"+price;
+      newdiv.appendChild(newimg);
+      newdiv.appendChild(newname);
+      newdiv.appendChild(newbr);
+      newdiv.appendChild(newprice);
+      container.appendChild(newdiv);
+    }
+    for (let i=0; i<files.length; i++) {
+      appendDiv(files[i], names[i], prices[i]);
+    }
+  });
+</script>
+
+</html>

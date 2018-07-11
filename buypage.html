@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="buypage.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <title>NCKU Buy</title>
+</head>
+
+<body>
+
+   <nav class="navbar navbar-expand-lg navbar-light bg-gray">
+  <a class="navbar-brand" href="#">NCKU Buy&amp;Sell</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container-fluid row">
+
+<!--
+<div class="col-sm-2 sid_bar sidenav" id="sidebar">
+  <a href="#">居家 Home</a>
+  <a href="#">食物 Food</a>
+  <a href="#">衣物 Clothes</a>
+  <a href="#">電子產品 3C</a>
+  <a href="#">寵物 Pets</a>
+
+</div>   
+-->
+  
+   
+<ul class="nav flex-column navbar-expand-lg col-sm-2 sid_bar sidenav">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <li class="nav-item">
+    <a class="nav-link active" href="#">居家 Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">食物 Food</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">衣物 Clothes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">電子產品 3C</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">寵物 Pets</a>
+  </li>
+  
+</ul>
+   <div class="col-sm-10 main" id="main">     
+<!--   search bar  -->
+      <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="想找些什麼呢？" aria-label="Search">
+      <button id="search_btn" class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    
+    <div class="item_container row" id="item_container">
+<!--    item -->
+    <div class="item">
+    <img id="item_img" src="img/table.png">
+    <span id="item_name" class="item_name">小木桌</span><br>
+    <span id="price" class="price">$200</span>
+        </div>
+<!--    end of item-->
+        </div>
+</div>
+  
+</div>   
+    <script src="login.js"></script>
+    <!-- bootstrap script    -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+
+
+</html>

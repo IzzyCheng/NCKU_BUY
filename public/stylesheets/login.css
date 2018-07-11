@@ -1,0 +1,33 @@
+
+body{
+background-image:url(/images/background.png);
+background-repeat: no-repeat;
+background-size:cover;
+}
+
+li{
+    display: inline;
+    }
+
+.sign{
+float:inline;
+}
+
+.login{
+    background-color: white;
+    padding: 5%;
+}
+
+.loginArea{
+    margin-top: 10%;
+}
+
+.form-check{
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+}
+
+.form-check-input{
+    zoom: 1.4;
+}
